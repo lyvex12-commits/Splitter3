@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color: #09090b;
+  overscroll-behavior-y: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide number input spinners so the set stepper looks clean */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Horizontally-scrollable chart rows (Muscle Set Distribution): visible
+   drag/swipe, but no ugly native scrollbar in the middle of a dark card. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Subtle glow used behind headline numbers (Splitter Score, Track stats)
+   to give them a bit of depth instead of flat text on a flat card. */
+.glow-amber {
+  text-shadow: 0 0 28px rgba(251, 191, 36, 0.35);
+}
+
+/* Floating pill nav sits above the safe area on notched phones. */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
